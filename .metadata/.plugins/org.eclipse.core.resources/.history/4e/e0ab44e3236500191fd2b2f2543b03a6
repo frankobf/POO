@@ -1,0 +1,12 @@
+package notadeaula;
+
+public class Uso {
+
+	public static void main(String[] args) {
+		Aluno a1 = new Aluno();
+		
+		a1.setNome("Franco Flores");
+		a1.toString();
+	}
+
+}
