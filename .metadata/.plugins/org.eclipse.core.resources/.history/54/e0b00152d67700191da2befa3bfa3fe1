@@ -60,7 +60,7 @@ public class Ponto {
 	public static void setLimiteInf(double limiteInf) {
 		Ponto.limiteInf = limiteInf;
 	}
-
+	
 	public boolean equals(Ponto ponto) {
 		if(this.getX() == ponto.getX() && this.getY() == ponto.getY())
 			return true;
@@ -68,4 +68,5 @@ public class Ponto {
 		else
 			return false;
 	}
+	if(x >= Ponto.limiteInf && x<= Ponto.limiteSup)
 }
