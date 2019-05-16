@@ -64,9 +64,8 @@ public class Ponto {
 	public boolean equals(Ponto ponto) {
 		if(this.getX() == ponto.getX() && this.getY() == ponto.getY())
 			return true;
-		
 		else
 			return false;
 	}
-	if(x >= Ponto.limiteInf && x<= Ponto.limiteSup)
+
 }
