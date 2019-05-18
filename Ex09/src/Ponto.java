@@ -1,4 +1,3 @@
-
 public class Ponto {
 
 	private double x, y;
@@ -67,5 +66,56 @@ public class Ponto {
 		
 		else
 			return false;
+	}
+	public Ponto clonar() throws Exception {
+		Ponto ponto = new Ponto(this.getX(), this.getY());
+		return ponto;
+	}
+
+	public Ponto criaSwap() throws Exception {
+		Ponto ponto = new Ponto(this.getY(), this.getX());
+		return ponto;
+	}
+	public boolean temEixoComum(Ponto ponto) {
+		if (this.getX() == ponto.getX() || this.getY() == ponto.getY())
+			return true;
+		return false;
+	}
+
+	public double distancia(Ponto ponto) throws Exception {
+		return distancia(this.getX(), this.getY(), ponto.getX(), ponto.getY());
+	}
+
+	
+	public double distancia(double x, double y) throws Exception {
+		return distancia(this.getX(), this.getY(), x, y);
+	}
+
+	public static double distancia(Ponto ponto1, Ponto ponto2) throws Exception {
+		return distancia(ponto1.getX(), ponto1.getY(), ponto2.getX(), ponto2.getY());
+	}
+
+	public static double distancia(double x1, double y1, double x2, double y2) throws Exception {
+		double dist;
+		if (x1 >= Ponto.limiteInf && x1 <= Ponto.limiteSup && y1 >= Ponto.limiteInf
+				&& y1 <= Ponto.limiteSup && x2 >= Ponto.limiteInf && x2 <= Ponto.limiteSup
+				&& y2 >= Ponto.limiteInf && y2 <= Ponto.limiteSup) {
+			dist = Math.sqrt((x1 - x2) * (x1 - x2) + (y1 - y2) * (y1 - y2));
+			return dist;
+		} else
+			throw new Exception("O valor da coordenada do ponto passado está fora do limite determinado");
+	}
+
+	public double distanciaDaOrigem() throws Exception {
+		return distancia(this.getX(), this.getY(), 0, 0);
+	}
+
+	public int compareTo(Ponto _ponto) throws Exception {
+		if(this.distanciaDaOrigem() > _ponto.distanciaDaOrigem())
+			return 1;
+		else if(this.distanciaDaOrigem() == _ponto.distanciaDaOrigem())
+			return 0;
+		else
+			return -1;
 	}
 }
