@@ -61,12 +61,13 @@ public class Ponto {
 	}
 
 	public boolean equals(Ponto ponto) {
-		if(this.getX() == ponto.getX() && this.getY() == ponto.getY())
+		if (this.getX() == ponto.getX() && this.getY() == ponto.getY())
 			return true;
-		
+
 		else
 			return false;
 	}
+
 	public Ponto clonar() throws Exception {
 		Ponto ponto = new Ponto(this.getX(), this.getY());
 		return ponto;
@@ -76,6 +77,7 @@ public class Ponto {
 		Ponto ponto = new Ponto(this.getY(), this.getX());
 		return ponto;
 	}
+
 	public boolean temEixoComum(Ponto ponto) {
 		if (this.getX() == ponto.getX() || this.getY() == ponto.getY())
 			return true;
@@ -86,7 +88,6 @@ public class Ponto {
 		return distancia(this.getX(), this.getY(), ponto.getX(), ponto.getY());
 	}
 
-	
 	public double distancia(double x, double y) throws Exception {
 		return distancia(this.getX(), this.getY(), x, y);
 	}
@@ -97,9 +98,8 @@ public class Ponto {
 
 	public static double distancia(double x1, double y1, double x2, double y2) throws Exception {
 		double dist;
-		if (x1 >= Ponto.limiteInf && x1 <= Ponto.limiteSup && y1 >= Ponto.limiteInf
-				&& y1 <= Ponto.limiteSup && x2 >= Ponto.limiteInf && x2 <= Ponto.limiteSup
-				&& y2 >= Ponto.limiteInf && y2 <= Ponto.limiteSup) {
+		if (x1 >= Ponto.limiteInf && x1 <= Ponto.limiteSup && y1 >= Ponto.limiteInf && y1 <= Ponto.limiteSup
+				&& x2 >= Ponto.limiteInf && x2 <= Ponto.limiteSup && y2 >= Ponto.limiteInf && y2 <= Ponto.limiteSup) {
 			dist = Math.sqrt((x1 - x2) * (x1 - x2) + (y1 - y2) * (y1 - y2));
 			return dist;
 		} else
@@ -111,9 +111,9 @@ public class Ponto {
 	}
 
 	public int compareTo(Ponto _ponto) throws Exception {
-		if(this.distanciaDaOrigem() > _ponto.distanciaDaOrigem())
+		if (this.distanciaDaOrigem() > _ponto.distanciaDaOrigem())
 			return 1;
-		else if(this.distanciaDaOrigem() == _ponto.distanciaDaOrigem())
+		else if (this.distanciaDaOrigem() == _ponto.distanciaDaOrigem())
 			return 0;
 		else
 			return -1;
